@@ -92,9 +92,9 @@
       loader.load("./koong_small.gltf", function (g) {
         gltf = g
         root = gltf.scene
-        root.children[0].children[10].children[2].material.metalness = 0
-       mixer = new THREE.AnimationMixer(root)
-       animationClip = gltf.animations[0]
+      //   root.children[0].children[10].children[2].material.metalness = 0
+      //  mixer = new THREE.AnimationMixer(root)
+      //  animationClip = gltf.animations[0]
       });
       
 
@@ -105,8 +105,8 @@
       session.addEventListener("select", (event) => {
         const clone = root.clone();
         clone.position.copy(reticle.position);
-        const animationAction = mixer.clipAction(animationClip, root)
-        animationAction.play()
+        // const animationAction = mixer.clipAction(animationClip, root)
+        // animationAction.play()
         scene.add(clone);
 
 
@@ -145,8 +145,8 @@
             reticle.updateMatrixWorld(true);
           }
           // Render the scene with THREE.WebGLRenderer.
-          const deltaTime = clock.getDelta();
-          mixer.update(deltaTime);
+          // const deltaTime = clock.getDelta();
+          // mixer.update(deltaTime);
 
           renderer.render(scene, camera)
         }
