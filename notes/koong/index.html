@@ -91,7 +91,7 @@ session.addEventListener("select", (event) => {
   if (flower) {
     const clone = flower.clone();
     clone.position.copy(reticle.position);
-    clone.scale = new THREE.Vector3(0.3,0.3,0.3)
+    clone.scale.copy(new THREE.Vector(0.3,0.3,0.3))
     scene.add(clone);
   }
 });
