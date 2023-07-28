@@ -32,6 +32,7 @@ async function activateXR() {
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
 directionalLight.position.set(10, 15, 10);
 scene.add(directionalLight);
+scene.add(new THREE.AmbientLight(0xffffff,1))
 
 
 
@@ -82,7 +83,7 @@ loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/re
 })
 
 let flower;
-loader.load("./koong_small.gltf", function(gltf) {
+loader.load("./try3.gltf", function(gltf) {
   flower = gltf.scene;
 });
 
@@ -90,6 +91,7 @@ session.addEventListener("select", (event) => {
   if (flower) {
     const clone = flower.clone();
     clone.position.copy(reticle.position);
+    clone.scale = new THREE.Vector3(0.3,0.3,0.3)
     scene.add(clone);
   }
 });
