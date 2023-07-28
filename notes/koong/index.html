@@ -101,6 +101,7 @@
 
 
       session.addEventListener("select", (event) => {
+        root.scale.set(0.1,0.1,0.1)
         root.children[0].children[10].children[2].material.metalness = 0
         mixer = new THREE.AnimationMixer(root)
         animationClip = gltf.animations[0]
