@@ -5,7 +5,7 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Hello WebXR!</title>
-  <script src="node_modules/eruda/eruda.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   <script>eruda.init();</script>
   <!-- three.js -->
   <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
@@ -82,7 +82,7 @@ loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/re
 })
 
 let flower;
-loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/sunflower/sunflower.gltf", function(gltf) {
+loader.load("./koong_small.gltf", function(gltf) {
   flower = gltf.scene;
 });
 
