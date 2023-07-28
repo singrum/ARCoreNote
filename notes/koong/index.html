@@ -101,12 +101,13 @@
 
 
       session.addEventListener("select", (event) => {
-        root.scale.set(0.1,0.1,0.1)
+        
         root.children[0].children[10].children[2].material.metalness = 0
         mixer = new THREE.AnimationMixer(root)
         animationClip = gltf.animations[0]
         const clone = root.clone();
         clone.position.copy(reticle.position);
+        clone.scale.set(0.1,0.1,0.1)
         // const animationAction = mixer.clipAction(animationClip, root)
         // animationAction.play()
         scene.add(clone);
