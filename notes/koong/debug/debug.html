@@ -67,21 +67,19 @@ class App {
 
 	_setupModel() {
 		const gltfLoader = new THREE.GLTFLoader()
-        const url = '../koong_small_bone.gltf';
+        const url = '../koong_small.gltf';
         gltfLoader.load(
             url,
             (gltf)=>{
                 const root = gltf.scene;
                 this._scene.add(root);
 				console.log(root)
-                root.children[0].children[10].children[2].material.metalness = 0
+                // root.children[0].children[10].children[2].material.metalness = 0
                 
                 this.mixer = new THREE.AnimationMixer(root);
                 console.log(root)
                 const animationClip = gltf.animations[0];
-                console.log(root.animations)
                 const animationAction = this.mixer.clipAction(animationClip, root);
-                console.log(root)
 
                 animationAction.play();
                 requestAnimationFrame(this.render.bind(this));
