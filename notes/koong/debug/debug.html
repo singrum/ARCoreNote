@@ -74,7 +74,7 @@ class App {
                 const root = gltf.scene;
                 this._scene.add(root);
 				console.log(root)
-                // root.children[0].children[10].children[2].material.metalness = 0
+                root.children[0].children[10].children[2].material.metalness = 0
                 
                 this.mixer = new THREE.AnimationMixer(root);
                 console.log(root)
