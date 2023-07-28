@@ -109,7 +109,7 @@
         const clone = root.clone();
         clone.position.copy(reticle.position);
         clone.scale.set(0.1,0.1,0.1)
-        clone.updateMatrixWorld(true)
+        console.log(clone)
         // const animationAction = mixer.clipAction(animationClip, root)
         // animationAction.play()
         scene.add(clone);
