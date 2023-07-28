@@ -90,11 +90,12 @@
       loader.load("./koong_small.gltf", function (g) {
         gltf = g
         root = gltf.scene
-      });
-      
-      root.children[0].children[10].children[2].material.metalness = 0
+        root.children[0].children[10].children[2].material.metalness = 0
       const mixer = new THREE.AnimationMixer(root)
       const AnimationClip = gltf.animations[0]
+      });
+      
+
 
 
 
