@@ -95,15 +95,15 @@
       root.children[0].children[10].children[2].material.metalness = 0
       const mixer = new THREE.AnimationMixer(root)
       const AnimationClip = gltf.animations[0]
-      const animationAction = mixer.clipAction(animationClip, root)
-      animationAction.play()
+
 
 
 
       session.addEventListener("select", (event) => {
         const clone = root.clone();
         clone.position.copy(reticle.position);
-        // clone.scale.copy(new THREE.Vector3(0.3,0.3,0.3))
+        const animationAction = mixer.clipAction(animationClip, root)
+        animationAction.play()
         scene.add(clone);
 
 
