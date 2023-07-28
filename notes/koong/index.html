@@ -107,13 +107,12 @@
         animationClip = gltf.animations[0]
 
         const clone = root.clone();
-        const group = new THREE.Object3D();
-        group.add(clone);
-        group.position.copy(reticle.position);
+        clone.position.copy(reticle.position);
         clone.scale.set(0.1,0.1,0.1)
+        clone.updateMatrixWorld(true)
         // const animationAction = mixer.clipAction(animationClip, root)
         // animationAction.play()
-        scene.add(group);
+        scene.add(clone);
 
 
       });
